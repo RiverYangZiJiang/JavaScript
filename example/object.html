@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <script>
+        // 对象
+        var person = {
+            // 对象内容以“属性:属性值”这种键值对的形式存在
+            firstName:"yzj",
+            lastName:"gege",
+            id:8888,
+            // 方法也是对象的一个属性
+            fullName:function(){
+                return this.firstName + this.lastName;
+            }
+        }
+        // 调用对象方法
+        document.write(person.fullName());
+        // 访问对象方法属性
+        document.write(person.fullName);  // function (){ return this.firstName + this.lastName; }
+        
+        var name = person.fullName;
+//        document.write(name());  // 不能如此调用
+        document.write(name);  // 打印“function (){ return this.firstName + this.lastName; }”
+    </script>
+</head>
+    
+<body>
+
+</body>
+</html>

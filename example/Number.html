@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <script>
+//        document.write( + "<br />");
+        // 将数字括起来就能直接调用Number的方法了，其实就是被转换为Number对象了
+        document.write((123).toString() + "<br />");  // 123
+        
+        
+        document.write(typeof(123) + "<br />");  // number
+        document.write(typeof((123)) + "<br />");  // number
+        document.write(typeof(new Number()) + "<br />");  // object   
+        var x = 100;
+        debugger;
+        document.write((123).constructor + "<br />");  // function Number() { [native code] }
+        document.write(new Number().constructor + "<br />");  // function Number() { [native code] }
+        
+        // 字符串转数字
+        document.write(new Number("456") + "<br />");  // 456
+        
+        document.write(new Number(false) + "<br />");  // 0
+        document.write(new Number(true) + "<br />");  // 1
+ 
+        document.write(new String(false) + "<br />");  // false
+        document.write(new String(true) + "<br />");  // true
+        
+    </script>
+</head>
+    
+<body>
+
+</body>
+</html>

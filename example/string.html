@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <script>
+//        document.write( + "<br />");
+        // 字符串
+        var str = "abcd";
+        document.write(str[1] + "<br />");  // 可以直接使用下标访问字符串里的字符，高级
+        
+        var x = "yzj";  // 通常， JavaScript 字符串是原始值，可以使用字符创建
+        var y = new  String("yzj");  // 使用 new 关键字将字符串定义为一个对象,不建议使用，使用new速度会变慢
+        document.write(typeof(x) + "<br />");  // string
+        document.write(typeof(y) + "<br />");  // object
+        document.write(x == y);  // true
+        document.write(x === y);  // false  === 为绝对相等，即数据类型与值都必须相等。
+    </script>
+</head>
+    
+<body>
+
+</body>
+</html>

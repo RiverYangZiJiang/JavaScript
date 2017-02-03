@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <script>
+        document.write("<h2>这是一个标题h2</h2>");
+    </script>
+</head>
+    
+<body>
+    <p>1.JavaScript能够直接写入HTML输出流中：</p>
+    <script>
+        document.write("<h1>这是一个标题h1</h1>");
+        document.write("<p>这是一个段落p</p>");
+    </script>
+    
+    <p>2.JavaScript对事件的反应：</p>
+    <button type="button" onclick="alert('欢迎！')">对点击事件的反应</button>
+    
+    <p id="demo">3.JavaScript改变HTML内容：</p>
+    <button type="button" onclick="changeContent()">改变HTML内容</button>
+    <script>
+        function changeContent(){
+            var x = document.getElementById("demo");
+            x.innerHTML = "内容被改变";
+        }
+    </script>
+    
+    <p>4.JavaScript：改变 HTML 图像</p>
+    <img id="img" src="image/pic_bulboff.gif" onclick="changeImg()">
+    <script>
+        function changeImg(){  // 实现开灯关灯的切换
+            var element = document.getElementById("img");  // 得到元素对象
+            if(element.src.match("bulboff")){  // 通过元素对象之间访问元素属性
+                element.src = "image/pic_bulbon.gif";  // 之间修改元素属性
+            }else{
+                element.src = "image/pic_bulboff.gif";
+            }
+        }
+    </script>    
+
+    <p id="pstyle">5.JavaScript：改变 HTML 样式style：</p>
+    <script>
+        document.getElementById("pstyle").style.backgroundColor = "red";
+    </script>
+
+    <p>6.JavaScript：验证输入：</p>
+    请输入数字：<input id="inputId" type="text">
+    <button type="button" onclick="validateInput()">验证</button>
+    <script>
+        function validateInput(){
+            var element = document.getElementById("inputId").value;
+            if(element == "" || isNaN(element)){
+                alert("不是数字");
+            }
+        }
+    </script>
+    
+</body>
+</html>

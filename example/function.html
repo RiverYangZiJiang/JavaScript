@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <script>
+        // 带参数和返回值的函数
+        // 函数参数前不能带var
+//        function sum(var num1, var num2)
+        function sum(num1, num2){
+            return num1 + num2;
+        }
+        document.write(sum(1, 2));
+        
+        function abc(){
+            
+        }
+        document.write(abc());  // undefined
+        document.write(abc);  // function abc(){ }
+        
+        // 全局变量、局部变量
+        var v1 = 100;  // 函数外声明，v1为全局变量，其实就是window对象的属性
+        function f1(){
+            v2 = 200;  // 无var声明，v2为全局变量
+            var v3 = 300;  // 函数内使用var声明的为局部变量
+            document.write("v1 = " + v1);
+        }
+        f1();  // v1 = 100
+        document.write("window.v1 = " + window.v1);  // window.v1 = 100
+        document.write("v2 = " + v2);  // v2 = 200
+        document.write("v3 = " + v3);  // 无法在此访问到v3
+        
+    </script>
+</head>
+    
+<body>
+
+</body>
+</html>
