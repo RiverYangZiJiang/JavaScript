@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <script>
+//        document.write( + "<br />");
+        // JSON 格式在语法上与创建 JavaScript 对象代码是相同的，只不过JSON字符串中key和字符串格式value必须加双引号
+        // JSON字符串
+        var jsonStr = '{"employees":[{"name":"yzj", "age":32}, {"name":"lisi", "age":25}]}';
+        var jsonObj = JSON.parse(jsonStr);  // JSON格式字符串转js对象
+        document.write(jsonObj.employees[1].name + "<br />");
+        
+        document.write(JSON.stringify(jsonObj) + "<br />");  // js对象转JSON格式字符串
+    </script>
+</head>
+    
+<body>
+
+</body>
+</html>

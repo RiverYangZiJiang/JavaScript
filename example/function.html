@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     
-    <script>
+    <script>  // document.write( + "<br />");
         // 带参数和返回值的函数
         // 函数参数前不能带var
 //        function sum(var num1, var num2)
@@ -26,9 +26,26 @@
             document.write("v1 = " + v1);
         }
         f1();  // v1 = 100
-        document.write("window.v1 = " + window.v1);  // window.v1 = 100
-        document.write("v2 = " + v2);  // v2 = 200
-        document.write("v3 = " + v3);  // 无法在此访问到v3
+//        document.write("window.v1 = " + window.v1);  // window.v1 = 100
+//        document.write("v2 = " + v2);  // v2 = 200
+//        document.write("v3 = " + v3);  // 无法在此访问到v3
+        
+        
+        // 值传递
+        function valuePass(x, y){
+            x = 1;
+            y = "1";
+        }
+        
+        function testValuePass(){
+            var x = 0;
+            var y = "0";
+            
+            valuePass(x, y);
+            document.write("x = " + x + ", y = " + y + "<br />");  
+        }        
+        testValuePass();  // x = 0, y = 0
+        
         
     </script>
 </head>
