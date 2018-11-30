@@ -15,6 +15,26 @@
         document.write(typeof(y) + "<br />");  // object
         document.write(x == y);  // true
         document.write(x === y);  // false  === 为绝对相等，即数据类型与值都必须相等。
+
+// replace默认只能替换第一个匹配的字符串，如果要都替换，则需要使用正则表达式//g
+        var plan_date_utc = "2019-01-02 11:16:13";
+var ex_date = "2019-01-01 11:16:13";
+var plan_date_utc_rep="2019-01-02 11:16:13".replace(/-/g,"/");  
+var ex_date_rep=ex_date.replace(/-/g,"/");
+document.write(plan_date_utc_rep);
+document.write(ex_date_rep);
+var d = new Date(plan_date_utc_rep).getTime();
+document.write(d);
+d = new Date(ex_date_rep).getTime();
+document.write("      " + d);
+document.write("plan date is 0000000000"+new Date(Date.parse(plan_date_utc_rep)));
+document.write("extension date is 0000000000"+new Date(Date.parse(ex_date_rep)));
+
+if(new Date(plan_date_utc_rep).getTime() > new Date(ex_date_rep).getTime()){
+    document.write("  if    ");
+}else{
+    document.write(" else     ");
+}
     </script>
 </head>
     
