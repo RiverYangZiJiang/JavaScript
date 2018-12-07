@@ -2,16 +2,63 @@
 <html>
 <head>
     <meta charset="utf-8">
-    
+    <script src="./ObjectTool.js"></script>
     <script>
 //        document.write( + "<br />");
-        // JSON 格式在语法上与创建 JavaScript 对象代码是相同的，只不过JSON字符串中key和字符串格式value必须加双引号
-        // JSON字符串
-        var jsonStr = '{"employees":[{"name":"yzj", "age":32}, {"name":"lisi", "age":25}]}';
-        var jsonObj = JSON.parse(jsonStr);  // JSON格式字符串转js对象
-        document.write(jsonObj.employees[1].name + "<br />");
-        
-        document.write(JSON.stringify(jsonObj) + "<br />");  // js对象转JSON格式字符串
+		function jsonTest1(){
+	        // JSON 格式在语法上与创建 JavaScript 对象代码是相同的，只不过JSON字符串中key和字符串格式value必须加双引号[1]
+	        // JSON字符串
+	        var jsonStr = '{"employees":[{"name":"yzj", "age":32}, {"name":"lisi", "age":25}]}';
+	        var jsonObj = JSON.parse(jsonStr);  // JSON格式字符串转js对象
+	        document.write(jsonObj.employees[1].name + "<br />");
+	        
+	        document.write(JSON.stringify(jsonObj) + "<br />");  // js对象转JSON格式字符串
+		}
+
+        // json格式字符串常用在参数直接传递，拿到json格式字符串之后，还需要转换为json对象
+        // https://www.cnblogs.com/haciont/p/6249649.html
+        function jsonTest2(){
+		    var jsonObject = {"name": "cxh", "sex": "man"};  // json对象
+		    var jsonStr = '{"name": "cxh", "sex": "man"}';  // json格式字符串
+		    // json对象
+		    // document.write(classof(jsonObject) + "<br>");  // Object
+		    // document.write(jsonObject + "<br>");  // [object Object]
+		    // json对象转字符串
+		    document.write(JSON.stringify(jsonObject) + "<br>");  // {"name":"cxh","sex":"man"}
+		    // document.write(jsonObject.toJSONString() + "<br>");
+
+		    // json格式字符串
+		    // document.write(classof(jsonStr) + "<br>");  // String，json格式字符串
+		    // document.write(jsonStr + "<br>");  // {"name": "cxh", "sex": "man"}
+		    // json字符串转json对象
+		    document.write(JSON.parse(jsonStr) + "<br>");  // [object Object]
+		    // document.write(jsonStr.parseJSON() + "<br>"); 
+        }
+
+        function JSONstringify(){
+        	// 利用JSON.stringify便可以打印出对象里的所有数据
+        	document.write(JSON.stringify(jsonTest2) + "<br>");  // undefined
+
+        	var jsonObject = {"name": "cxh", "sex": "man"};  // json对象
+		    var jsonStr = '{"name": "cxh", "sex": "man"}';  // json格式字符串
+        	document.write(JSON.stringify(jsonObject) + "<br>");  // {"name":"cxh","sex":"man"}
+
+        	var jsonStr1 = JSON.stringify(jsonStr);
+        	var jsonObject1 = JSON.parse(jsonStr1);
+        	var jsonObject2 = JSON.parse(jsonObject1);
+
+        	document.write(jsonStr1 + "<br>");  // "{\"name\": \"cxh\", \"sex\": \"man\"}"
+        	document.write(jsonObject1 + "<br>");  // {"name": "cxh", "sex": "man"}
+        	document.write(jsonObject1.name + "<br>");  // undefined
+
+        	document.write(jsonObject2 + "<br>");  // [object Object]
+        	document.write(jsonObject2.name + "<br>");  // cxh
+        }
+
+        // jsonTest1();
+        JSONstringify();
+
+        /*参考：[1] http://www.runoob.com/js/js-json.html*/
     </script>
 </head>
     

@@ -2,9 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    
+    <script src="./ObjectTool.js"></script>
     <script>
-        // 对象
+
+    function objectTest(){
+        // 对象，js的对象就是json格式
         var person = {
             // 对象内容以“属性:属性值”这种键值对的形式存在
             firstName:"yzj",
@@ -16,13 +18,32 @@
             }
         }
         // 调用对象方法
-        document.write(person.fullName());
+        document.write(person.fullName() + "<br>");
         // 访问对象方法属性
-        document.write(person.fullName);  // function (){ return this.firstName + this.lastName; }
+        document.write(person.fullName + "<br>");  // function (){ return this.firstName + this.lastName; }
         
         var name = person.fullName;
 //        document.write(name());  // 不能如此调用
-        document.write(name);  // 打印“function (){ return this.firstName + this.lastName; }”
+        document.write(name + "<br>");  // 打印“function (){ return this.firstName + this.lastName; }”
+    }
+
+    // 获取对象的key值
+    function objectKey(){
+        var o1 = {"k1":"v1", "k2":"v2"};
+        for (let key in o1) {
+            document.write(key + "<br>");
+        }
+
+        document.write(Object.keys(o1) + "<br>");
+    }
+
+    objectKey();
+    //objectTest();
+
+    // Example
+    // document.write(classof(new Date()) + "<br>");   // => "Date"
+    // document.write(classof("str") + "<br>");  // String
+
     </script>
 </head>
     
